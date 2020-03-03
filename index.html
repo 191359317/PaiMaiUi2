@@ -1,12 +1,86 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8" />
-		<title></title>
+		<title>后台管理页面参考</title>
+		<link rel="stylesheet" href="css/index.css" />
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+		<script type="text/javascript" src="js/jq_ajax_config.js"></script>
+		<style>
+			.el-header,
+			.el-footer {
+				background: gainsboro;
+				font-size: 30px;
+			}
+			
+			.el-menu {
+				border: 0px;
+			}
+		</style>
 	</head>
+
 	<body>
-		<h1>跟新顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶</h1>
-				<h1>跟新顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶</h1>
-								<h1>跟新顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶</h1>
+		<div id="indxApp">
+			<el-container style='height:95vh; border: 1px solid #eee'>
+				<!--<el-header style='height:10%;'>头部Log</el-header>-->
+				<el-container>
+					<el-aside width="200px">
+
+						<el-menu default-active="2" class="el-menu-vertical-demo">
+							<el-menu-item index="1" @click="showView('queryAuction.html')">
+								<i class="el-icon-menu"></i>
+								<span slot="title" >查看</span>
+							</el-menu-item>
+							
+							<el-menu-item index="2" @click="showView('竞拍页.html')">
+								<i class="el-icon-menu"></i>
+								<span slot="title">竞拍</span>
+							</el-menu-item>
+							<el-menu-item index="3" @click="showView('拍卖品列表页.html')">
+								<i class="el-icon-document"></i>
+								<span slot="title">商品</span>
+							</el-menu-item>
+							<el-menu-item index="4" @click="showView('拍卖商品管理页.html')">
+								<i class="el-icon-setting"></i>
+								<span slot="title">商品管理</span>
+							</el-menu-item>
+							<el-menu-item index="5" @click="showView('修改商品页.html')">
+								<i class="el-icon-setting"></i>
+								<span slot="title">修改商品</span>
+							</el-menu-item>
+							<el-menu-item index="6" @click="showView('增加商品页.html')">
+								<i class="el-icon-setting"></i>
+								<span slot="title">新增商品</span>
+							</el-menu-item>
+							<el-menu-item index="6" @click="showView('竞拍者注册页.html')">
+								<i class="el-icon-setting"></i>
+								<span slot="title">注册</span>
+							</el-menu-item>
+						</el-menu>
+					</el-aside>
+					<el-main>
+						<div id="cnt"></div>
+					</el-main>
+				</el-container>
+				<!--<el-footer style='height:10%;'>底部Log</el-footer>-->
+			</el-container>
+		</div>
 	</body>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script>
+		var indexApp = new Vue({
+			data: {},
+			methods: {
+				showView(url) {
+					$('#cnt').load(url);
+				}
+			},
+			mounted() {
+				
+			}
+		}).$mount('#indxApp');
+	</script>
+
 </html>
